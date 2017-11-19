@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Psychic Game</title>
+<h1>The Psychic Game</h1>
+
+</head>
+<body>
+
+
+    <div id="psychicgame">
+      <p>Guess what letter I'm thinking of</p>
+      <p>Wins: <span id="wins">0</span></p>
+      <p>Losses: <span id="losses">0</span></p>
+      <p>Guesses Left: <span id="guessleft">9</span></p>
+      <p>Your Guesses so far: <span id="guesssofar">0</span></p>
+  </div>
+
+
+<script type="text/javascript">
+	
+// State our variables
+
+var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10",];
+
+//keeps score of our variables
+var wins  = 0;
+var losses = 0;
+var guessleft = 9;
+var guesssofar = [];
+
+document.onkeyup = function(event) {
+
+	var userguess = event.key;
+
+	var computerguess = numbers [Math.floor(Math.random() * numbers.length)];
+
+// if/else statements
+
+//if the guesses left are greater than 0, user can continue to guess. If the user guess = the computers guess than you win. 
+	
+		if(guessleft > 0) 
+
+		if(userguess == computerguess) {
+			wins++;
+		}
+
+//if there are no guesses left you lose. 
+
+		else if (guessleft == 0){
+		losses++
+
+	}	
+	
+// document the score on the html page. 
+
+	var printWins = document.getElementById('wins').innerHTML = wins;
+    var printLosses = document.getElementById('losses').innerHTML = losses;
+    var printguessleft = document.getElementById('guessleft').innerHTML = guesses left;
+    var printguesssofar = document.getElementById('guesssofar').innerHTML = guesses so far;
+
+   }
+
+
+</script>
+</body>
+</html>
