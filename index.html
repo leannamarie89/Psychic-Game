@@ -21,7 +21,7 @@
 	
 // State our variables
 
-var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10",];
+var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 //keeps score of our variables
 var wins  = 0;
@@ -33,24 +33,18 @@ document.onkeyup = function(event) {
 
 	var userguess = event.key;
 
-	var computerguess = numbers [Math.floor(Math.random() * numbers.length)];
+	var computerguess = letters[Math.floor(Math.random() * letters.length)];
+}
 
 // if/else statements
-
-//if the guesses left are greater than 0, user can continue to guess. If the user guess = the computers guess than you win. 
 	
-		if(guessleft > 0) 
-
-		if(userguess == computerguess) {
+		if(userguess === computerguess){
 			wins++;
-		}
+		} 
 
-//if there are no guesses left you lose. 
-
-		else if (guessleft == 0){
+		else if (guessleft === 0){
 		losses++
-
-	}	
+        }	
 	
 // document the score on the html page. 
 
